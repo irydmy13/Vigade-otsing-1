@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3debebb9-abc1-4251-b083-ae92e6558d76</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Praktiline töö.  Matemaatika.py</StartupFile>
+    <StartupFile>Töö Vigade otsing -2 Sirakus.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="10 практических заданий по теме Циклы.py" />
+    <Compile Include="Töö Vigade otsing -2 Sirakus.py" />
     <Compile Include="Vigade_otsing__1.py" />
   </ItemGroup>
   <ItemGroup>
