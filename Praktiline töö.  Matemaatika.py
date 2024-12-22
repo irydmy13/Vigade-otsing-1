@@ -1,8 +1,31 @@
+
+
+#ЗАДАНИЕ В ПРОЦЕССЕ РАБОТЫ
 import random
 
-def generate_question(level):
-   
-    if level == 1:
+print("Добро пожаловать в проверку знаний по математике!")
+print("Выберите уровень сложности: 1(лёгкий), 2(средний), 3(сложный)")
+
+while True:
+    try:
+        level = int(input("Введите уровень сложности 1, 2 или 3:"))
+        if level in [1, 2, 3]:
+            break
+        else:
+            print("Пожалуйста, выберите 1, 2 или 3.")
+    except ValueError:
+        print("Введите число 1, 2 или 3.")
+
+while True:
+    try:
+        num_ques = int(input("Сколько примеров вы хотите решить?"))
+        if num_ques > 0:
+            break
+        else:
+            print("Введите положительное число.")
+    except ValueError:
+        print("Введите целое число.")
+
         num1 = random.randint(1, 10)
         num2 = random.randint(1, 10)
         operations = ['+', '-']
