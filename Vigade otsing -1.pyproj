@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3debebb9-abc1-4251-b083-ae92e6558d76</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>класс1.py</StartupFile>
+    <StartupFile>Ülesanded IF, While, For.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,6 +26,7 @@
     <Compile Include="Vigade_otsing__1.py" />
     <Compile Include="Värskendamine.py" />
     <Compile Include="класс1.py" />
+    <Compile Include="Ülesanded IF, While, For.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Praktiline töö.  Matemaatika.py" />
