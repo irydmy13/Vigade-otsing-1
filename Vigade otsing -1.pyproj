@@ -27,6 +27,7 @@
     <Compile Include="Värskendamine.py" />
     <Compile Include="класс1.py" />
     <Compile Include="Ülesanded IF, While, For.py" />
+    <Compile Include="TARgv_list.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Praktiline töö.  Matemaatika.py" />
