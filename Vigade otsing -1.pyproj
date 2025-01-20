@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3debebb9-abc1-4251-b083-ae92e6558d76</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>homework_list.py</StartupFile>
+    <StartupFile>Isikukood.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,7 @@
     <Compile Include="homework_list.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Isikukood.py" />
     <Compile Include="Töö Vigade otsing -2 Sirakus.py" />
     <Compile Include="Vigade_otsing__1.py" />
     <Compile Include="Värskendamine.py" />
