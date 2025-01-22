@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3debebb9-abc1-4251-b083-ae92e6558d76</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tund7(Def).py</StartupFile>
+    <StartupFile>Tund7Modul.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
