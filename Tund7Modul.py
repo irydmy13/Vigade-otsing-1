@@ -85,3 +85,30 @@ from random import *
 #ulesanne5
 
 
+#ulesanne6
+def is_prime(a=randint(0,1000))->bool:
+    """
+    """
+    print (a)
+    v=True
+    for i in range(2,a):
+        if a%i==0:
+            v=False
+
+    return v
+
+#ulesanne7
+def date(paev:int,kuu:int,aasta:int)->bool:
+    ""
+    ""
+    if paev in range(1,31) and kuu in [1,3,5,7,8,10,12]:
+        v=True
+    elif paev in range(1,29) and kuu==2 and is_year_leap(aasta):
+        v=True
+    elif paev in range(1,30) and kuu in [2,4,6,9,11]:
+        v=True
+    else:
+        v=False
+    return v
+
+
