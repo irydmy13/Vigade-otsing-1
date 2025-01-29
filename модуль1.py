@@ -37,3 +37,23 @@ print(associations, "\n")
 print(fonds)
 
 print("-" * 15)
+
+
+print("organization components")
+print("1) hierarhia")
+print("2) Departeerimine")
+print("3) Komunikatsioonkanaalid Jira, Trello, Teams")
+print("4) Roolid ja vastutused")
+print("5) Toovoog ja protsessid")
+print("6) Tooristad ja tehnoloogiad")
+print("7) Kultuur")
+
+print("Ametlik suhtlemine")
+print("1) e-kiri, koosolekud ")
+print("mitte-ametlik suhtlemine: koik teised viisid")
+print("Dokumentatioon")
+print("1) Politikad")
+print("2) Juhised")
+print("3) Protokolid")
+
+
