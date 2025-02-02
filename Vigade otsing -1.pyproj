@@ -35,6 +35,7 @@
     <Compile Include="TARgv_list.py" />
     <Compile Include="Tund7Modul.py" />
     <Compile Include="модуль1.py" />
+    <Compile Include="Registreerimine ja autoriseerimine.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Praktiline töö.  Matemaatika.py" />
