@@ -1,14 +1,23 @@
-import random
-import string
+import MyModule
 
-users = [] #список пользователей
-passwords = [] #список паролей
+while True:
+    print("\n1. Регистрация")
+    print("\n2. Авторизация")
+    print("\n3. Изменение логина/пароля")
+    print("\n4. Восстановление пароля")
+    print("\n5. Выход")
 
-def create_pswd():
-    str0 = ".,:;!_*-+()/#¤%&"
-    str1 = '0123456789'
-    str2 = 'qwertyuiopasdfghjklzxcvbnm'
-    str3 = str2.upper()
-    str4 = str0 + str1 + str2 + str3
-    ls = list(str4)
-    random.shuffle(ls)
+    a=input("Выберите действие:")
+    if a=='1':
+        MyModule.register()
+    elif a =='2':
+        MyModule.login()
+    elif a =='3':
+        MyModule.editing()
+    elif a =='4':
+        MyModule.reset_pswd()
+    elif a =='5':
+       print("Выход из программы.")
+       break
+    else:
+        print("Неверный ввод, попробуйте снова.")
