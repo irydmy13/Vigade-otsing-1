@@ -9,7 +9,7 @@ while True:
 
     a=input("Выберите действие:")
     if a=='1':
-        MyModule.register()
+        MyModule.registration()
     elif a =='2':
         MyModule.login()
     elif a =='3':

@@ -19,6 +19,7 @@ def validate_pswd(password):
     return (
         any(c.isdigit() for c in password) and
         any(c.islower() for c in password) and
+        any(c.isupper() for c in password) and
         any(c in ".,:;!_*-+()/#¤%&" for c in password))
 
 #Регистрация нового пользователя
@@ -31,7 +32,7 @@ def registration():
 #Генерация пароля
     a=input("Сгенерировать пароль автоматически? (да/нет): ")
     if a.lower() =='да':
-        password = validate_pswd()
+        password = create_pswd()
         print(f"Ваш пароль: {password}")
     else:
         while True:
