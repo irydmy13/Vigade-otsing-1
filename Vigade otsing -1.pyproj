@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3debebb9-abc1-4251-b083-ae92e6558d76</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>модуль1.py</StartupFile>
+    <StartupFile>IT organisatsiooni juhtimine ja taristu.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -34,7 +34,7 @@
     <Compile Include="Ülesanded IF, While, For.py" />
     <Compile Include="TARgv_list.py" />
     <Compile Include="Tund7Modul.py" />
-    <Compile Include="модуль1.py" />
+    <Compile Include="IT organisatsiooni juhtimine ja taristu.py" />
     <Compile Include="Registreerimine ja autoriseerimine.py" />
     <Compile Include="MyModule.py" />
   </ItemGroup>
