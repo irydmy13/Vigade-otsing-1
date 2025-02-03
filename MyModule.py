@@ -6,21 +6,15 @@ passwords = [] #список паролей
 
 #Создать пароль из 12 символов (случайный)
 def create_pswd():
-    str0 = ".,:;!_*-+()/#¤%&"
-    str1 = '0123456789'
-    str2 = 'qwertyuiopasdfghjklzxcvbnm'
-    str3 = str2.upper()
-    str4 = str0 + str1 + str2 + str3
-    ls = list(str4)
-    return ''.join(random.choice(ls) for _ in range(12))
+    chars = string.ascii_letters + string.digits + ".,:;!_*-+()/#¤%&"
+    return ''.join(random.choice(chars) for _ in range(12))
 
 #Проверка пароля на содержание цифры, буквы в нижнем и верхнем регистре и спецсимволы
 def validate_pswd(password):
-    return (
-        any(c.isdigit() for c in password) and
-        any(c.islower() for c in password) and
-        any(c.isupper() for c in password) and
-        any(c in ".,:;!_*-+()/#¤%&" for c in password))
+    return (any(c.isdigit() for c in password) and
+            any(c.islower() for c in password) and
+            any(c.isupper() for c in password) and
+            any(c in ".,:;!_*-+()/#¤%&" for c in password))
 
 #Регистрация нового пользователя
 def registration():
@@ -30,8 +24,8 @@ def registration():
         return
 
 #Генерация пароля
-    a=input("Сгенерировать пароль автоматически? (да/нет): ")
-    if a.lower() =='да':
+    a = input("Сгенерировать пароль автоматически? (да/нет): ").lower()
+    if a.lower() == 'да':
         password = create_pswd()
         print(f"Ваш пароль: {password}")
     else:
@@ -60,7 +54,7 @@ def login():
 
 #Изменить логин/пароль
 def editing():
-    username=input("Введите ваш логин: ")
+    username = input("Введите ваш логин: ")
     if username not in users:
         print("Пользователь не найден!")
         return
