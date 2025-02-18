@@ -7,8 +7,8 @@ while True:
     print("4. Восстановление пароля")
     print("5. Выход")
 
-    a=input("Выберите действие:")
-    if a== '1':
+    a = input("Выберите действие:")
+    if a == '1':
         MyModule.registration()
     elif a == '2':
         MyModule.login()
