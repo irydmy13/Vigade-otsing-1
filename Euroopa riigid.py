@@ -1,7 +1,7 @@
 import random
 
 # Чтение данных из файла и загрузка их в словарь
-with open('riigid.txt', 'r', encoding='utf-8') as file:
+with open('riigid_pealinnad.txt', 'r', encoding='utf-8') as file:
     countries_and_capitals = {}  # Словарь для хранения страны и её столицы
     for line in file:
         country, capital = line.strip().split('-')  # Разделяем строку на страну и столицу
