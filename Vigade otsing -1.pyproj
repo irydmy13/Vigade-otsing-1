@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3debebb9-abc1-4251-b083-ae92e6558d76</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Euroopa riigid.py</StartupFile>
+    <StartupFile>Ruutvõrrandi lahendus.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,6 +26,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Isikukood.py" />
+    <Compile Include="Ruutvõrrandi lahendus.py" />
     <Compile Include="Tund7%28Def%29.py" />
     <Compile Include="Töö Vigade otsing -2 Sirakus.py" />
     <Compile Include="Vigade_otsing__1.py" />
@@ -38,6 +39,7 @@
     <Compile Include="Registreerimine ja autoriseerimine.py" />
     <Compile Include="MyModule.py" />
     <Compile Include="Euroopa riigid.py" />
+    <Compile Include="tund_1902.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Praktiline töö.  Matemaatika.py" />
