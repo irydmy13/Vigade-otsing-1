@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
+from PIL import Image, ImageTk
 import smtplib
 import ssl
 from email.message import EmailMessage
@@ -7,12 +8,26 @@ import imghdr
 import json
 import os
 
-# Константы
+#Константы
 SAVE_FILE = "draft.json"
 LOG_FILE = "sent_emails.log"
 ATTACHMENTS = []
+BACKGROUND_IMAGE = "4.jpg"
 
-# Функция выбора файлов
+#Создание окна
+root = tk.Tk()
+root.title("E-kirja saatmine")
+root.geometry("550x500")
+
+#Установка фона
+if os.path.exists(BACKGROUND_IMAGE):
+    bg_image = Image.open(BACKGROUND_IMAGE).resize((550, 500))
+    bg_photo = ImageTk.PhotoImage(bg_image)
+
+    bg_label = tk.Label(root, image=bg_photo)
+    bg_label.place(relwidth=1, relheight=1)
+
+#Функция выбора файлов
 def vali_pilt():
     file_paths = filedialog.askopenfilenames(filetypes=[("Images & Files", "*.*")])
     if file_paths:
@@ -20,11 +35,11 @@ def vali_pilt():
         ATTACHMENTS.extend(file_paths)
         update_attachments_label()
 
-# Обновление метки вложений
+#Обновление метки вложений
 def update_attachments_label():
     l_lisatud.config(text="\n".join(ATTACHMENTS) if ATTACHMENTS else "Нет вложений")
 
-# Очистка формы
+#Очистка формы
 def clear_form():
     email_box.delete(0, tk.END)
     teema_box.delete(0, tk.END)
@@ -32,7 +47,7 @@ def clear_form():
     ATTACHMENTS.clear()
     update_attachments_label()
 
-# Предварительный просмотр письма
+#Предварительный просмотр письма
 def preview_email():
     preview_text = f"""
     📧 Кому: {email_box.get()}
@@ -43,7 +58,7 @@ def preview_email():
     """
     messagebox.showinfo("Предварительный просмотр", preview_text)
 
-# Автосохранение черновика
+#Автосохранение черновика
 def save_draft():
     draft = {
         "email": email_box.get(),
@@ -54,7 +69,7 @@ def save_draft():
     with open(SAVE_FILE, "w") as f:
         json.dump(draft, f)
 
-# Загрузка черновика
+#Загрузка черновика
 def load_draft():
     if os.path.exists(SAVE_FILE):
         with open(SAVE_FILE, "r") as f:
@@ -66,12 +81,12 @@ def load_draft():
             ATTACHMENTS = draft["attachments"]
             update_attachments_label()
 
-# Отправка письма
+#Отправка письма
 def saada_kiri():
-    kellele = email_box.get().split(",")  # Поддержка нескольких получателей
+    kellele = email_box.get().split(",")
     teema = teema_box.get()
     kiri = kiri_box.get("1.0", tk.END) + "\n\n--\nПодпись пользователя"
-    
+
     smtp_server = "smtp.gmail.com"
     port = 587
     sender_email = "kotiukir@gmail.com"
@@ -83,14 +98,14 @@ def saada_kiri():
     msg["From"] = sender_email
     msg["To"] = ", ".join(kellele)
 
-    # Добавление вложений
+    #Добавление вложений
     for file_path in ATTACHMENTS:
         with open(file_path, "rb") as f:
             file_data = f.read()
             file_type = imghdr.what(None, file_data) or "octet-stream"
         msg.add_attachment(file_data, maintype="image", subtype=file_type, filename=os.path.basename(file_path))
 
-    # Отправка письма
+    #Отправка письма
     try:
         progress_bar.start()
         context = ssl.create_default_context()
@@ -100,7 +115,7 @@ def saada_kiri():
         server.send_message(msg)
         messagebox.showinfo("Успех", "Письмо отправлено!")
 
-        # Сохранение лога
+        #Сохранение лога
         with open(LOG_FILE, "a") as log:
             log.write(f"To: {msg['To']}\nSubject: {msg['Subject']}\n\n{kiri}\n{'-'*50}\n")
 
@@ -110,52 +125,41 @@ def saada_kiri():
         server.quit()
         progress_bar.stop()
 
-# Переключение темы
-def toggle_theme():
-    new_theme = "clam" if theme_var.get() else "alt"
-    style.theme_use(new_theme)
-
-# Создание окна
-root = tk.Tk()
-root.title("E-kirja saatmine")
-root.geometry("550x500")
-
-# Стилизация
+#Стилизация
 style = ttk.Style()
 style.theme_use("clam")
+style.configure("Pink.TButton", background="#FFC0CB", foreground="black", font=("Arial", 10, "bold"))
+style.map("Pink.TButton", background=[("active", "#FF69B4")])  #Цвет при наведении
 
-theme_var = tk.BooleanVar()
-ttk.Checkbutton(root, text="Темный режим", variable=theme_var, command=toggle_theme).grid(row=0, column=2, padx=10)
-
-# Метки и поля
-ttk.Label(root, text="EMAIL:").grid(row=1, column=0, sticky="w", padx=10)
+#Поля и кнопки
+ttk.Label(root, text="EMAIL:", background="pink").place(x=20, y=30)
 email_box = ttk.Entry(root, width=50)
-email_box.grid(row=1, column=1, padx=10, pady=5)
+email_box.place(x=100, y=30)
 
-ttk.Label(root, text="TEEMA:").grid(row=2, column=0, sticky="w", padx=10)
+ttk.Label(root, text="ТЕМА:", background="pink").place(x=20, y=70)
 teema_box = ttk.Entry(root, width=50)
-teema_box.grid(row=2, column=1, padx=10, pady=5)
+teema_box.place(x=100, y=70)
 
-ttk.Label(root, text="LISA:").grid(row=3, column=0, sticky="w", padx=10)
+ttk.Label(root, text="ВЛОЖЕНИЯ:", background="pink").place(x=20, y=110)
 l_lisatud = ttk.Label(root, text="Нет вложений", width=50, relief="sunken", anchor="w")
-l_lisatud.grid(row=3, column=1, padx=10, pady=5)
+l_lisatud.place(x=100, y=110)
 
-ttk.Label(root, text="KIRI:").grid(row=4, column=0, sticky="nw", padx=10)
+ttk.Label(root, text="ПИСЬМО:", background="pink").place(x=20, y=150)
 kiri_box = tk.Text(root, width=50, height=5)
-kiri_box.grid(row=4, column=1, padx=10, pady=5)
+kiri_box.place(x=100, y=150)
 
 # Кнопки
-ttk.Button(root, text="LISA PILT", command=vali_pilt).grid(row=5, column=0, padx=10, pady=5)
-ttk.Button(root, text="ПРЕДВАРИТЕЛЬНЫЙ ПРОСМОТР", command=preview_email).grid(row=5, column=1, padx=10, pady=5)
+ttk.Button(root, text="ДОБАВИТЬ ИЗОБРАЖЕНИЕ", command=vali_pilt, style="Pink.TButton").place(x=50, y=270)
+ttk.Button(root, text="ПРЕДВАРИТЕЛЬНЫЙ ПРОСМОТР", command=preview_email, style="Pink.TButton").place(x=250, y=270)
 
-ttk.Button(root, text="СОХРАНИТЬ ЧЕРНОВИК", command=save_draft).grid(row=6, column=0, padx=10, pady=5)
-ttk.Button(root, text="ЗАГРУЗИТЬ ЧЕРНОВИК", command=load_draft).grid(row=6, column=1, padx=10, pady=5)
+ttk.Button(root, text="СОХРАНИТЬ ЧЕРНОВИК", command=save_draft, style="Pink.TButton").place(x=50, y=310)
+ttk.Button(root, text="ЗАГРУЗИТЬ ЧЕРНОВИК", command=load_draft, style="Pink.TButton").place(x=250, y=310)
 
-ttk.Button(root, text="ОЧИСТИТЬ", command=clear_form).grid(row=7, column=0, padx=10, pady=5)
-ttk.Button(root, text="SAADA", command=saada_kiri).grid(row=7, column=1, padx=10, pady=5)
+ttk.Button(root, text="ОЧИСТИТЬ", command=clear_form, style="Pink.TButton").place(x=50, y=350)
+ttk.Button(root, text="ОТПРАВИТЬ", command=saada_kiri, style="Pink.TButton").place(x=250, y=350)
 
 # Прогресс-бар
 progress_bar = ttk.Progressbar(root, mode="indeterminate")
-progress_bar.grid(row=8, column=1, sticky="ew", padx=10, pady=5)
+progress_bar.place(x=100, y=400, width=350)
 
 root.mainloop()
