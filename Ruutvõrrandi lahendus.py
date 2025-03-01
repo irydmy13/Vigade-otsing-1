@@ -5,20 +5,20 @@ import matplotlib.pyplot as plt
 from PIL import Image, ImageTk
 import os
 
-# Создание окна
+#Создание окна
 aken = tk.Tk()
 aken.title("Решение квадратного уравнения")
 aken.geometry("400x200")
 
-# Фон (загрузите свое изображение как "2.jpg")
+#Фон
 if os.path.exists("2.jpg"):
     bg_image = Image.open("2.jpg").resize((400, 200))
     bg_photo = ImageTk.PhotoImage(bg_image)
     
     bg_label = tk.Label(aken, image=bg_photo)
-    bg_label.place(relwidth=1, relheight=1)  # Фон занимает весь экран
+    bg_label.place(relwidth=1, relheight=1)  #Фон занимает весь экран
 
-# Поля ввода вместо коэффициентов
+#Поля ввода вместо коэффициентов
 sisestus_a = tk.Entry(aken, font=("Arial", 14), width=5)
 sisestus_a.place(x=20, y=30)
 
@@ -37,7 +37,7 @@ sisestus_c.place(x=240, y=30)
 silt_eq = tk.Label(aken, text=" = 0", font=("Arial", 14), bg="#dfefff")
 silt_eq.place(x=295, y=30)
 
-# Функция для решения уравнения
+#Функция для решения уравнения
 def lahenda():
     if not sisestus_a.get() or not sisestus_b.get() or not sisestus_c.get():
         sisestus_a.config(bg="lightcoral" if not sisestus_a.get() else "white")
@@ -70,7 +70,7 @@ def lahenda():
     else:
         vastus_silt.config(text="Нет действительных корней", bg="lightcoral")
 
-# Функция для построения графика
+#Функция для построения графика
 def joonista_graafik():
     if not sisestus_a.get() or not sisestus_b.get() or not sisestus_c.get():
         return
@@ -96,14 +96,14 @@ def joonista_graafik():
     plt.legend()
     plt.show()
 
-# Кнопки
+#Кнопки
 nupp_lahenda = tk.Button(aken, text="Решить", command=lahenda, font=("Arial", 14), bg="lightgreen")
 nupp_lahenda.place(x=110, y=70)
 
 nupp_graafik = tk.Button(aken, text="График", command=joonista_graafik, font=("Arial", 14), bg="lightblue")
 nupp_graafik.place(x=200, y=70)
 
-# Вывод решения
+#Вывод решения
 vastus_silt = tk.Label(aken, text="Решение", font=("Arial", 14), bg="lavender", width=40)
 vastus_silt.place(x=20, y=120)
 
