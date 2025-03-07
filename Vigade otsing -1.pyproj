@@ -50,6 +50,8 @@
     <Content Include="2.jpg" />
     <Content Include="3.jpg" />
     <Content Include="4.jpg" />
+    <Content Include="5.jpg" />
+    <Content Include="6.ico" />
     <Content Include="Praktiline töö.  Matemaatika.py" />
     <Content Include="riigid_pealinnad.txt" />
   </ItemGroup>
