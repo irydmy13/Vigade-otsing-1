@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3debebb9-abc1-4251-b083-ae92e6558d76</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Ruutvõrrandi lahendus.py</StartupFile>
+    <StartupFile>pythagoras.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,6 +26,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Isikukood.py" />
+    <Compile Include="pythagoras.py" />
     <Compile Include="Ruutvõrrand%28в классе%29.py" />
     <Compile Include="Ruutvõrrandi lahendus.py" />
     <Compile Include="Tund7%28Def%29.py" />
