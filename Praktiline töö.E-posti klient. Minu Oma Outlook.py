@@ -1,23 +1,22 @@
-import tkinter as tk
-from tkinter import ttk, filedialog, messagebox
-from PIL import Image, ImageTk
-import smtplib
-import ssl
-from email.message import EmailMessage
-import imghdr
-import json
-import os
+import tkinter as tk  # Импортируем библиотеку Tkinter для создания графического интерфейса
+from tkinter import ttk, filedialog, messagebox  # Импортируем дополнительные модули Tkinter для удобства работы
+from PIL import Image, ImageTk  # Импортируем библиотеку PIL для работы с изображениями
+import smtplib  # Библиотека для отправки email через SMTP
+import ssl  # Модуль для создания защищенного соединения
+from email.message import EmailMessage  # Импорт класса для создания email-сообщений
+import imghdr  # Определяет тип изображения
+import json  # Библиотека для работы с JSON-файлами
+import os  # Модуль для работы с файловой системой
 
-#Константы
-SAVE_FILE = "draft.json"
-LOG_FILE = "sent_emails.log"
-ATTACHMENTS = []
-BACKGROUND_IMAGE = "4.jpg"
+SAVE_FILE = "draft.json"  # Файл для сохранения черновика
+LOG_FILE = "sent_emails.log"  # Файл для сохранения истории отправленных писем
+ATTACHMENTS = []  # Список вложений
+BACKGROUND_IMAGE = "4.jpg"  # Фоновое изображение
 
 #Создание окна
 root = tk.Tk()
-root.title("E-kirja saatmine")
-root.geometry("550x500")
+root.title("E-kirja saatmine")  # Заголовок окна
+root.geometry("550x500")  # Размер окна
 
 #Установка фона
 if os.path.exists(BACKGROUND_IMAGE):
@@ -128,23 +127,24 @@ def saada_kiri():
 #Стилизация
 style = ttk.Style()
 style.theme_use("clam")
-style.configure("Pink.TButton", background="#FFC0CB", foreground="black", font=("Arial", 10, "bold"))
+style.configure("Pink.TButton", background="#FFC0CB", foreground="black", font=("Segoe UI", 10, "bold"))
 style.map("Pink.TButton", background=[("active", "#FF69B4")])  #Цвет при наведении
 
 #Поля и кнопки
-ttk.Label(root, text="EMAIL:", background="pink").place(x=20, y=30)
-email_box = ttk.Entry(root, width=50)
+font_style = ("Comic Sans MS", 11, "bold")
+ttk.Label(root, text="EMAIL:", background="#CFD0FC").place(x=20, y=30)
+email_box = ttk.Entry(root, width=50, font=font_style)
 email_box.place(x=100, y=30)
 
-ttk.Label(root, text="ТЕМА:", background="pink").place(x=20, y=70)
+ttk.Label(root, text="ТЕМА:", background="#CFD0FC").place(x=20, y=70)
 teema_box = ttk.Entry(root, width=50)
 teema_box.place(x=100, y=70)
 
-ttk.Label(root, text="ВЛОЖЕНИЯ:", background="pink").place(x=20, y=110)
+ttk.Label(root, text="ВЛОЖЕНИЯ:", background="#CFD0FC").place(x=20, y=110)
 l_lisatud = ttk.Label(root, text="Нет вложений", width=50, relief="sunken", anchor="w")
 l_lisatud.place(x=100, y=110)
 
-ttk.Label(root, text="ПИСЬМО:", background="pink").place(x=20, y=150)
+ttk.Label(root, text="ПИСЬМО:", background="#CFD0FC").place(x=20, y=150)
 kiri_box = tk.Text(root, width=50, height=5)
 kiri_box.place(x=100, y=150)
 
@@ -158,7 +158,7 @@ ttk.Button(root, text="ЗАГРУЗИТЬ ЧЕРНОВИК", command=load_draft,
 ttk.Button(root, text="ОЧИСТИТЬ", command=clear_form, style="Pink.TButton").place(x=50, y=350)
 ttk.Button(root, text="ОТПРАВИТЬ", command=saada_kiri, style="Pink.TButton").place(x=250, y=350)
 
-# Прогресс-бар
+# Прогресс-бар (показывает, что идёт процесс отправки письма)
 progress_bar = ttk.Progressbar(root, mode="indeterminate")
 progress_bar.place(x=100, y=400, width=350)
 
