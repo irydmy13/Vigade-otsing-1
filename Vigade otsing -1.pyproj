@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3debebb9-abc1-4251-b083-ae92e6558d76</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>pythagoras.py</StartupFile>
+    <StartupFile>Pythagorase ruut.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,12 +21,11 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="10 практических заданий по теме Циклы.py" />
+    <Compile Include="Десять практических заданий по теме Циклы.py" />
     <Compile Include="homework_list.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Isikukood.py" />
-    <Compile Include="pythagoras.py" />
     <Compile Include="Ruutvõrrand%28в классе%29.py" />
     <Compile Include="Ruutvõrrandi lahendus.py" />
     <Compile Include="Tund7%28Def%29.py" />
@@ -44,6 +43,7 @@
     <Compile Include="tund_1902.py" />
     <Compile Include="Praktiline töö.E-posti klient. Minu Oma Outlook.py" />
     <Compile Include="Oigused.py" />
+    <Compile Include="Pythagorase ruut.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="1.jpg" />
@@ -54,6 +54,7 @@
     <Content Include="6.ico" />
     <Content Include="Praktiline töö.  Matemaatika.py" />
     <Content Include="riigid_pealinnad.txt" />
+    <Content Include="characteristics.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
