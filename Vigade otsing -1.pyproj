@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3debebb9-abc1-4251-b083-ae92e6558d76</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Pythagorase ruut.py</StartupFile>
+    <StartupFile>tund19-03.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -44,6 +44,7 @@
     <Compile Include="Praktiline töö.E-posti klient. Minu Oma Outlook.py" />
     <Compile Include="Oigused.py" />
     <Compile Include="Pythagorase ruut.py" />
+    <Compile Include="tund19-03.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="1.jpg" />
