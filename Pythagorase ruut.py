@@ -72,8 +72,8 @@ def send_email():
         messagebox.showerror("Ошибка", "Введите email!")
         return
 
-    sender_email = "kotiukir@gmail.com"
-    app_password = "yzps ylch ucij sdyz"
+    # sender_email = "kotiukir@gmail.com"
+    # app_password = ************
 
     user_name = name_entry.get()
     user_birthdate = birth_entry.get()

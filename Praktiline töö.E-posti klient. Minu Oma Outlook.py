@@ -88,8 +88,8 @@ def saada_kiri():
 
     smtp_server = "smtp.gmail.com"
     port = 587
-    sender_email = "kotiukir@gmail.com"
-    password = "yzps ylch ucij sdyz"
+    # sender_email = "kotiukir@gmail.com"
+    # password = "*******************"
 
     msg = EmailMessage()
     msg.set_content(kiri)
