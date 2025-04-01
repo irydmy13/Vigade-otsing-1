@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3debebb9-abc1-4251-b083-ae92e6558d76</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tund19-03.py</StartupFile>
+    <StartupFile>Blackjack.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,6 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="first.py" />
     <Compile Include="Десять практических заданий по теме Циклы.py" />
     <Compile Include="homework_list.py">
       <SubType>Code</SubType>
@@ -32,7 +33,7 @@
     <Compile Include="Töö Vigade otsing -2 Sirakus.py" />
     <Compile Include="Vigade_otsing__1.py" />
     <Compile Include="Värskendamine.py" />
-    <Compile Include="класс1.py" />
+    <Compile Include="Blackjack.py" />
     <Compile Include="Ülesanded IF, While, For.py" />
     <Compile Include="TARgv_list.py" />
     <Compile Include="Tund7Modul.py" />
@@ -49,13 +50,20 @@
   <ItemGroup>
     <Content Include="1.jpg" />
     <Content Include="2.jpg" />
+    <Content Include="21-fon-forma.gif" />
+    <Content Include="21-logo.ico" />
+    <Content Include="21-logo.png" />
+    <Content Include="2XBET.png" />
     <Content Include="3.jpg" />
     <Content Include="4.jpg" />
     <Content Include="5.jpg" />
     <Content Include="6.ico" />
+    <Content Include="casino.png" />
+    <Content Include="game.ico" />
     <Content Include="Praktiline töö.  Matemaatika.py" />
     <Content Include="riigid_pealinnad.txt" />
     <Content Include="characteristics.txt" />
+    <Content Include="tulemused.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
