@@ -428,6 +428,7 @@ class BlackjackGame:
             self.history_frame.pack(side=tk.RIGHT, fill=tk.Y, padx=5, pady=5)
             self.history_visible = True
             self.history_button.config(text="История")
+            self.show_history() 
 
 # ------------------ Запуск окна оплаты ------------------ #
 app.mainloop()
